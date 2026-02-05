@@ -1,0 +1,42 @@
+/* ============================================
+ * VS Code Custom Font Configuration
+ * ============================================
+ * 
+ * Custom CSS and JS Loader で読み込む CSS ファイル。
+ * diff 行、ゴーストテキスト、インラインチャットのフォントを変更します。
+ *
+ * フォント構成例（Moralerspace ファミリー）:
+ *   - 確定コード / ユーザー入力: Moralerspace Argon（settings.json で設定）
+ *   - Diff 行 / ゴースト提案:   Moralerspace Radon（手書き風）
+ *   - AI チャットメッセージ:     Moralerspace Xenon（可読性重視）
+ */
+
+/* --------------------------------------------------
+ * 1. Diff 挿入行（diff-font-patch.js が付与するクラス）
+ * -------------------------------------------------- */
+.view-line.custom-diff-line,
+.view-line.custom-diff-line * {
+    font-family: 'Moralerspace Radon JPDOC', monospace !important;
+}
+
+/* --------------------------------------------------
+ * 2. ゴーストテキスト（Copilot インライン提案）
+ * -------------------------------------------------- */
+.ghost-text-decoration {
+    font-family: 'Moralerspace Radon JPDOC', monospace !important;
+    font-style: italic !important;
+}
+
+/* --------------------------------------------------
+ * 3. インラインチャット入力欄
+ * -------------------------------------------------- */
+.inline-chat-overflow.monaco-editor .view-lines {
+    font-family: 'Moralerspace Argon JPDOC', monospace !important;
+}
+
+/* --------------------------------------------------
+ * 4. AI チャットメッセージ（Markdown 描画部分）
+ * -------------------------------------------------- */
+.zone-widget.inline-chat-widget .rendered-markdown {
+    font-family: 'Moralerspace Xenon JPDOC', sans-serif !important;
+}
